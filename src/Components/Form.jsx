@@ -17,7 +17,7 @@ export default function Form(){
         <input {...register("firstName", {
           pattern: { //Pattern validation
             value: /^[A-Za-z\s]+$/, //Pattern
-            message: "Using invalid symbols!" //Error message
+            message: "Invalid symbols!" //Error message
           },
           required: "Required field!" //Error message
         })}
@@ -29,7 +29,7 @@ export default function Form(){
         <input {...register("lastName", {
           pattern: { //Pattern validation
             value: /^[A-Za-z\s]+$/, //Pattern
-            message: "Using invalid symbols!" //Error message
+            message: "Invalid symbols!" //Error message
           },
           required: "Required field!", //Error message
         })}
@@ -51,7 +51,8 @@ export default function Form(){
           pattern: {
             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             message: "Using invalid symbols"
-          }
+          },
+          required: "Required field!"
         })}
         id="user-email"></input>
         <p>{errors.emailAddress?.message}</p>
